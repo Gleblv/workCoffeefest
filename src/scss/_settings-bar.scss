@@ -5,7 +5,7 @@
 	margin-bottom: 10rem;
 	
 	&.sticky {
-		padding-bottom: 18.4rem;
+		padding-bottom: 17.4rem !important;
 
 		#slider-categories {
 			height: 10rem;
@@ -160,7 +160,7 @@
 		}
 
 		&.sticky {
-			padding-bottom: 6rem;
+			padding-bottom: 6rem !important;
 
 			#slider-categories {
 				top: 18.3rem;
