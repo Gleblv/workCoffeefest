@@ -312,7 +312,6 @@
 				}
 
 				&__info {
-					padding: 8rem 4rem;
 					row-gap: 2.4rem;
 					height: auto;
 
@@ -342,6 +341,7 @@
 
 					span {
 						font-size: 3.6rem;
+						margin: 0 -3rem;
 					}
 				}
 			}

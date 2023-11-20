@@ -51,6 +51,10 @@
 
 		.catalog-card-1__info {
 			height: 39.5rem;
+			padding: 0;
+		}
+
+		.catalog-card-1__descr {
 			padding: 6rem 4rem;
 		}
 	}
@@ -220,6 +224,16 @@
 
 			.catalog-card__price {
 				margin-bottom: 1.5rem;
+			}
+
+			&--big {
+				.catalog-card-1__info {
+					padding: 0;
+				}
+
+				.catalog-card-1__descr {
+					padding: 8rem 4rem;
+				}
 			}
 		}
 	}
