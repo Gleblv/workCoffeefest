@@ -136,6 +136,22 @@ document.addEventListener("DOMContentLoaded", function () {
          el: ".chronology__swiper-pagination",
          clickable: true,
       },
+      on: {
+         slideChange: (swiper) => {
+            if (window.screen.width < 768) {
+               const slides = swiper.slides;
+
+               slides.forEach((slide, i) => {
+                  if (i === swiper.activeIndex) {
+                     slide.classList.add("active");
+                     return;
+                  }
+
+                  slide.classList.remove("active");
+               });
+            }
+         },
+      },
    });
 
    const awaySwiper = new Swiper(".away__swiper", {

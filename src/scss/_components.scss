@@ -1271,6 +1271,11 @@ $white20: rgba(255, 255, 255, 0.2);
 		height: 59rem;
 		padding: 0;
 		overflow: auto;
+
+		&.with-video {
+			height: auto;
+		}
+
 		.section-info__card-left {
 			padding: 8rem 6rem;
 			padding-right: 4rem;

@@ -6,6 +6,7 @@
 	@media (min-height: 120em) {
 		max-width: 1920px;
 		margin: 0 auto;
+		margin-top: 14.4rem;
 	}
 
 	.next,
@@ -118,8 +119,8 @@
 			&__img {
 				width: 100%;
 				height: 100%;
-				-o-object-fit: cover;
-				object-fit: cover;
+				// -o-object-fit: cover;
+				// object-fit: cover;
 				position: relative;
 				z-index: -1;
 			}

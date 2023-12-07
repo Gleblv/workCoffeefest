@@ -148,7 +148,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1.2rem 1.6rem;
-	margin: 0 0 3rem;
+	margin: 0 0 4rem;
 	width: 32rem;
 	position: relative;
 }
@@ -290,9 +290,9 @@
 @media (hover: hover) {
 	.catalog-card-2:hover {
 		.catalog-card-2__details {
-			max-height: 39.8rem;
+			max-height: 38.2rem;
 			opacity: 1;
-			height: 39.8rem;
+			height: 38.2rem;
 			padding-bottom: 3rem;
 		}
 	}
