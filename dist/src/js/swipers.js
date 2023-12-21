@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
       slidesPerView: 1,
       speed: 700,
       spaceBetween: rem(3),
+      lazy: true,
       autoplay: {
          delay: 7000,
          disableOnInteraction: false,
@@ -46,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
       slidesPerView: 1,
       speed: 700,
       spaceBetween: rem(3),
+      lazy: true,
       autoplay: {
          delay: 7000,
          disableOnInteraction: false,
