@@ -8,29 +8,29 @@ const rem = function (rem) {
    }
 };
 
-const sections = document.querySelectorAll("section");
-let scrolled = false;
+// const sections = document.querySelectorAll("section");
+// let scrolled = false;
 
-if (sections.length > 4) {
-   for (let i = 0; i < sections.length; i++) {
-      if (i > 4) {
-         document.querySelector("main").removeChild(sections[i]);
-      }
-   }
+// if (sections.length > 4) {
+//    for (let i = 0; i < sections.length; i++) {
+//       if (i > 4) {
+//          document.querySelector("main").removeChild(sections[i]);
+//       }
+//    }
 
-   window.addEventListener("scroll", () => {
-      if (!scrolled) {
-         for (let i = 0; i < sections.length; i++) {
-            if (i > 4) {
-               document.querySelector("main").appendChild(sections[i]);
-            }
-         }
+//    window.addEventListener("scroll", () => {
+//       if (!scrolled) {
+//          for (let i = 0; i < sections.length; i++) {
+//             if (i > 4) {
+//                document.querySelector("main").appendChild(sections[i]);
+//             }
+//          }
 
-         scrolled = true;
-         console.log(sections.length, document.querySelectorAll("section").length);
-      }
-   });
-}
+//          scrolled = true;
+//          console.log(sections.length, document.querySelectorAll("section").length);
+//       }
+//    });
+// }
 
 document.addEventListener("DOMContentLoaded", function () {
    const header = document.querySelector("header");

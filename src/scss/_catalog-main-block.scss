@@ -27,6 +27,11 @@
     .catalog-main-block:last-child {
         padding: 0 0 10rem 0;
     }
+    .catalog-main-block__container {
+        &:not(:last-child) {
+            margin-bottom: 12rem;
+        }
+    }
     .catalog-main-block__title {
         margin: 0 0 8rem 0;
     }

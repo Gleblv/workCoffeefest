@@ -1,0 +1,13 @@
+.catalog-description {
+    background-color: $light;
+
+    &__title {
+        margin-bottom: 5rem;
+    }
+
+    @media (max-width: 48em) {
+        &__title {
+            margin-bottom: 8rem;
+        }
+    }
+}
