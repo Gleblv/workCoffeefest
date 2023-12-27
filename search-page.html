@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="./src/fonts/fonts.css" />
+      <link rel="stylesheet" href="./src/css/main.css" />
+      <title>Поиск</title>
+   </head>
+   <body>
+      @@include('./templates/header.html')
+      <main class="main">
+         <section class="search-main section">
+            <div class="breadcrumbs__container container">
+               <ul class="breadcrumbs">
+                  <li class="breadcrumbs__item">
+                     <a href="/dist/main.html" class="breadcrumbs__item-link">
+                        <svg
+                           width="28"
+                           height="28"
+                           viewBox="0 0 28 28"
+                           fill="none"
+                           xmlns="http://www.w3.org/2000/svg"
+                        >
+                           <path
+                              d="M12 20.5H16M18.1804 24.5H9.81965C7.5109 24.5 5.6393 22.714 5.6393 20.5108V15.633C5.6393 14.9248 5.34447 14.2456 4.81969 13.7448C3.60381 12.5845 3.76187 10.662 5.15251 9.69692L11.5412 5.263C13.0071 4.24567 14.9929 4.24567 16.4588 5.263L22.8475 9.69691C24.2381 10.662 24.3962 12.5845 23.1803 13.7448C22.6555 14.2456 22.3607 14.9248 22.3607 15.633V20.5108C22.3607 22.714 20.4891 24.5 18.1804 24.5Z"
+                              stroke="#29354D"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                           />
+                        </svg>
+                     </a>
+                  </li>
+
+                  <li class="breadcrumbs__item">
+                     <a href="/dist/news.html" class="breadcrumbs__item-link">Поиск</a>
+                  </li>
+               </ul>
+            </div>
+            <div class="search-main__container container">
+               <div class="search-main__title heading2">Поиск</div>
+               <div class="search-main__input">
+                  <input type="text" placeholder="Поиск" />
+                  <ul class="search-main__input-list">
+                     <li class="search-main__input-list__item heading5">Item</li>
+                     <li class="search-main__input-list__item heading5">Item</li>
+                     <li class="search-main__input-list__item heading5">Item</li>
+                     <li class="search-main__input-list__item heading5">Item</li>
+                     <li class="search-main__input-list__item heading5">Item</li>
+                     <li class="search-main__input-list__item heading5">Item</li>
+                     <li class="search-main__input-list__item heading5">Item</li>
+                     <li class="search-main__input-list__item heading5">Item</li>
+                     <li class="search-main__input-list__item heading5">Item</li>
+                     <li class="search-main__input-list__item heading5">Item</li>
+                     <li class="search-main__input-list__item heading5">Item</li>
+                     <li class="search-main__input-list__item heading5">Item</li>
+                  </ul>
+               </div>
+            </div>
+         </section>
+         <section class="search-list section">
+            <div class="search-list__container container">
+               <div class="catalog__content-box">
+                  <div class="catalog-card-1">
+                     <div class="catalog-card-1__img">
+                        <img src="./src/images/sandwichwithcofee.png" alt="" />
+                     </div>
+                     <div class="catalog-card-1__imgless">
+                        <img src="./src/images/item-missing.jpg" alt="" />
+                     </div>
+                     <div class="catalog-card-1__descr">
+                        <div href="/" class="catalog-card-1__title heading4">
+                           <a href="#" class="catalog-card-1__link-to-item"></a>
+                           Клаб-сэндвич с ветчиной и сыром
+                        </div>
+                        <div class="catalog-card__price">
+                           <div class="catalog-card__main-price">
+                              800
+                              <span>₽</span>
+                           </div>
+                           <div class="catalog-card__sale">
+                              <div class="catalog-card__sale-price">
+                                 600
+                                 <span>₽</span>
+                              </div>
+                              <div class="catalog-card__weight">/ 240 г</div>
+                           </div>
+                        </div>
+                        <div class="catalog-card__add-to-cart catalog-card-1__add-to-cart">
+                           <svg class="bag bag--dark">
+                              <use xlink:href="sprite.svg#bag"></use>
+                           </svg>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="catalog-card-1">
+                     <div class="catalog-card-1__img">
+                        <img src="./src/images/sandwichwithcofee.png" alt="" />
+                     </div>
+                     <div class="catalog-card-1__imgless">
+                        <img src="./src/images/item-missing.jpg" alt="" />
+                     </div>
+                     <div class="catalog-card-1__descr">
+                        <div href="/" class="catalog-card-1__title heading4">
+                           <a href="#" class="catalog-card-1__link-to-item"></a>
+                           Клаб-сэндвич с ветчиной и сыром
+                        </div>
+                        <div class="catalog-card__price">
+                           <div class="catalog-card__main-price">
+                              800
+                              <span>₽</span>
+                           </div>
+                           <div class="catalog-card__sale">
+                              <div class="catalog-card__sale-price">
+                                 600
+                                 <span>₽</span>
+                              </div>
+                              <div class="catalog-card__weight">/ 240 г</div>
+                           </div>
+                        </div>
+                        <div class="catalog-card__add-to-cart catalog-card-1__add-to-cart">
+                           <svg class="bag bag--dark">
+                              <use xlink:href="sprite.svg#bag"></use>
+                           </svg>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="catalog-card-1">
+                     <div class="catalog-card-1__img">
+                        <img src="./src/images/sandwichwithcofee.png" alt="" />
+                     </div>
+                     <div class="catalog-card-1__imgless">
+                        <img src="./src/images/item-missing.jpg" alt="" />
+                     </div>
+                     <div class="catalog-card-1__descr">
+                        <div href="/" class="catalog-card-1__title heading4">
+                           <a href="#" class="catalog-card-1__link-to-item"></a>
+                           Клаб-сэндвич с ветчиной и сыром
+                        </div>
+                        <div class="catalog-card__price">
+                           <div class="catalog-card__main-price">
+                              800
+                              <span>₽</span>
+                           </div>
+                           <div class="catalog-card__sale">
+                              <div class="catalog-card__sale-price">
+                                 600
+                                 <span>₽</span>
+                              </div>
+                              <div class="catalog-card__weight">/ 240 г</div>
+                           </div>
+                        </div>
+                        <div class="catalog-card__add-to-cart catalog-card-1__add-to-cart">
+                           <svg class="bag bag--dark">
+                              <use xlink:href="sprite.svg#bag"></use>
+                           </svg>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="catalog-card-1">
+                     <div class="catalog-card-1__img">
+                        <img src="./src/images/sandwichwithcofee.png" alt="" />
+                     </div>
+                     <div class="catalog-card-1__imgless">
+                        <img src="./src/images/item-missing.jpg" alt="" />
+                     </div>
+                     <div class="catalog-card-1__descr">
+                        <div href="/" class="catalog-card-1__title heading4">
+                           <a href="#" class="catalog-card-1__link-to-item"></a>
+                           Клаб-сэндвич с ветчиной и сыром
+                        </div>
+                        <div class="catalog-card__price">
+                           <div class="catalog-card__main-price">
+                              800
+                              <span>₽</span>
+                           </div>
+                           <div class="catalog-card__sale">
+                              <div class="catalog-card__sale-price">
+                                 600
+                                 <span>₽</span>
+                              </div>
+                              <div class="catalog-card__weight">/ 240 г</div>
+                           </div>
+                        </div>
+                        <div class="catalog-card__add-to-cart catalog-card-1__add-to-cart">
+                           <svg class="bag bag--dark">
+                              <use xlink:href="sprite.svg#bag"></use>
+                           </svg>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="catalog-card-1">
+                     <div class="catalog-card-1__img">
+                        <img src="./src/images/sandwichwithcofee.png" alt="" />
+                     </div>
+                     <div class="catalog-card-1__imgless">
+                        <img src="./src/images/item-missing.jpg" alt="" />
+                     </div>
+                     <div class="catalog-card-1__descr">
+                        <div href="/" class="catalog-card-1__title heading4">
+                           <a href="#" class="catalog-card-1__link-to-item"></a>
+                           Клаб-сэндвич с ветчиной и сыром
+                        </div>
+                        <div class="catalog-card__price">
+                           <div class="catalog-card__main-price">
+                              800
+                              <span>₽</span>
+                           </div>
+                           <div class="catalog-card__sale">
+                              <div class="catalog-card__sale-price">
+                                 600
+                                 <span>₽</span>
+                              </div>
+                              <div class="catalog-card__weight">/ 240 г</div>
+                           </div>
+                        </div>
+                        <div class="catalog-card__add-to-cart catalog-card-1__add-to-cart">
+                           <svg class="bag bag--dark">
+                              <use xlink:href="sprite.svg#bag"></use>
+                           </svg>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="catalog-card-1">
+                     <div class="catalog-card-1__img">
+                        <img src="./src/images/sandwichwithcofee.png" alt="" />
+                     </div>
+                     <div class="catalog-card-1__imgless">
+                        <img src="./src/images/item-missing.jpg" alt="" />
+                     </div>
+                     <div class="catalog-card-1__descr">
+                        <div href="/" class="catalog-card-1__title heading4">
+                           <a href="#" class="catalog-card-1__link-to-item"></a>
+                           Клаб-сэндвич с ветчиной и сыром
+                        </div>
+                        <div class="catalog-card__price">
+                           <div class="catalog-card__main-price">
+                              800
+                              <span>₽</span>
+                           </div>
+                           <div class="catalog-card__sale">
+                              <div class="catalog-card__sale-price">
+                                 600
+                                 <span>₽</span>
+                              </div>
+                              <div class="catalog-card__weight">/ 240 г</div>
+                           </div>
+                        </div>
+                        <div class="catalog-card__add-to-cart catalog-card-1__add-to-cart">
+                           <svg class="bag bag--dark">
+                              <use xlink:href="sprite.svg#bag"></use>
+                           </svg>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="catalog-card-1">
+                     <div class="catalog-card-1__img">
+                        <img src="./src/images/sandwichwithcofee.png" alt="" />
+                     </div>
+                     <div class="catalog-card-1__imgless">
+                        <img src="./src/images/item-missing.jpg" alt="" />
+                     </div>
+                     <div class="catalog-card-1__descr">
+                        <div href="/" class="catalog-card-1__title heading4">
+                           <a href="#" class="catalog-card-1__link-to-item"></a>
+                           Клаб-сэндвич с ветчиной и сыром
+                        </div>
+                        <div class="catalog-card__price">
+                           <div class="catalog-card__main-price">
+                              800
+                              <span>₽</span>
+                           </div>
+                           <div class="catalog-card__sale">
+                              <div class="catalog-card__sale-price">
+                                 600
+                                 <span>₽</span>
+                              </div>
+                              <div class="catalog-card__weight">/ 240 г</div>
+                           </div>
+                        </div>
+                        <div class="catalog-card__add-to-cart catalog-card-1__add-to-cart">
+                           <svg class="bag bag--dark">
+                              <use xlink:href="sprite.svg#bag"></use>
+                           </svg>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="catalog-card-1">
+                     <div class="catalog-card-1__img">
+                        <img src="./src/images/sandwichwithcofee.png" alt="" />
+                     </div>
+                     <div class="catalog-card-1__imgless">
+                        <img src="./src/images/item-missing.jpg" alt="" />
+                     </div>
+                     <div class="catalog-card-1__descr">
+                        <div href="/" class="catalog-card-1__title heading4">
+                           <a href="#" class="catalog-card-1__link-to-item"></a>
+                           Клаб-сэндвич с ветчиной и сыром
+                        </div>
+                        <div class="catalog-card__price">
+                           <div class="catalog-card__main-price">
+                              800
+                              <span>₽</span>
+                           </div>
+                           <div class="catalog-card__sale">
+                              <div class="catalog-card__sale-price">
+                                 600
+                                 <span>₽</span>
+                              </div>
+                              <div class="catalog-card__weight">/ 240 г</div>
+                           </div>
+                        </div>
+                        <div class="catalog-card__add-to-cart catalog-card-1__add-to-cart">
+                           <svg class="bag bag--dark">
+                              <use xlink:href="sprite.svg#bag"></use>
+                           </svg>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="catalog-card-1">
+                     <div class="catalog-card-1__img">
+                        <img src="./src/images/sandwichwithcofee.png" alt="" />
+                     </div>
+                     <div class="catalog-card-1__imgless">
+                        <img src="./src/images/item-missing.jpg" alt="" />
+                     </div>
+                     <div class="catalog-card-1__descr">
+                        <div href="/" class="catalog-card-1__title heading4">
+                           <a href="#" class="catalog-card-1__link-to-item"></a>
+                           Клаб-сэндвич с ветчиной и сыром
+                        </div>
+                        <div class="catalog-card__price">
+                           <div class="catalog-card__main-price">
+                              800
+                              <span>₽</span>
+                           </div>
+                           <div class="catalog-card__sale">
+                              <div class="catalog-card__sale-price">
+                                 600
+                                 <span>₽</span>
+                              </div>
+                              <div class="catalog-card__weight">/ 240 г</div>
+                           </div>
+                        </div>
+                        <div class="catalog-card__add-to-cart catalog-card-1__add-to-cart">
+                           <svg class="bag bag--dark">
+                              <use xlink:href="sprite.svg#bag"></use>
+                           </svg>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="catalog-card-1">
+                     <div class="catalog-card-1__img">
+                        <img src="./src/images/sandwichwithcofee.png" alt="" />
+                     </div>
+                     <div class="catalog-card-1__imgless">
+                        <img src="./src/images/item-missing.jpg" alt="" />
+                     </div>
+                     <div class="catalog-card-1__descr">
+                        <div href="/" class="catalog-card-1__title heading4">
+                           <a href="#" class="catalog-card-1__link-to-item"></a>
+                           Клаб-сэндвич с ветчиной и сыром
+                        </div>
+                        <div class="catalog-card__price">
+                           <div class="catalog-card__main-price">
+                              800
+                              <span>₽</span>
+                           </div>
+                           <div class="catalog-card__sale">
+                              <div class="catalog-card__sale-price">
+                                 600
+                                 <span>₽</span>
+                              </div>
+                              <div class="catalog-card__weight">/ 240 г</div>
+                           </div>
+                        </div>
+                        <div class="catalog-card__add-to-cart catalog-card-1__add-to-cart">
+                           <svg class="bag bag--dark">
+                              <use xlink:href="sprite.svg#bag"></use>
+                           </svg>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="catalog-card-1">
+                     <div class="catalog-card-1__img">
+                        <img src="./src/images/sandwichwithcofee.png" alt="" />
+                     </div>
+                     <div class="catalog-card-1__imgless">
+                        <img src="./src/images/item-missing.jpg" alt="" />
+                     </div>
+                     <div class="catalog-card-1__descr">
+                        <div href="/" class="catalog-card-1__title heading4">
+                           <a href="#" class="catalog-card-1__link-to-item"></a>
+                           Клаб-сэндвич с ветчиной и сыром
+                        </div>
+                        <div class="catalog-card__price">
+                           <div class="catalog-card__main-price">
+                              800
+                              <span>₽</span>
+                           </div>
+                           <div class="catalog-card__sale">
+                              <div class="catalog-card__sale-price">
+                                 600
+                                 <span>₽</span>
+                              </div>
+                              <div class="catalog-card__weight">/ 240 г</div>
+                           </div>
+                        </div>
+                        <div class="catalog-card__add-to-cart catalog-card-1__add-to-cart">
+                           <svg class="bag bag--dark">
+                              <use xlink:href="sprite.svg#bag"></use>
+                           </svg>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="catalog-card-1">
+                     <div class="catalog-card-1__img">
+                        <img src="./src/images/sandwichwithcofee.png" alt="" />
+                     </div>
+                     <div class="catalog-card-1__imgless">
+                        <img src="./src/images/item-missing.jpg" alt="" />
+                     </div>
+                     <div class="catalog-card-1__descr">
+                        <div href="/" class="catalog-card-1__title heading4">
+                           <a href="#" class="catalog-card-1__link-to-item"></a>
+                           Клаб-сэндвич с ветчиной и сыром
+                        </div>
+                        <div class="catalog-card__price">
+                           <div class="catalog-card__main-price">
+                              800
+                              <span>₽</span>
+                           </div>
+                           <div class="catalog-card__sale">
+                              <div class="catalog-card__sale-price">
+                                 600
+                                 <span>₽</span>
+                              </div>
+                              <div class="catalog-card__weight">/ 240 г</div>
+                           </div>
+                        </div>
+                        <div class="catalog-card__add-to-cart catalog-card-1__add-to-cart">
+                           <svg class="bag bag--dark">
+                              <use xlink:href="sprite.svg#bag"></use>
+                           </svg>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="catalog-card-1">
+                     <div class="catalog-card-1__img">
+                        <img src="./src/images/sandwichwithcofee.png" alt="" />
+                     </div>
+                     <div class="catalog-card-1__imgless">
+                        <img src="./src/images/item-missing.jpg" alt="" />
+                     </div>
+                     <div class="catalog-card-1__descr">
+                        <div href="/" class="catalog-card-1__title heading4">
+                           <a href="#" class="catalog-card-1__link-to-item"></a>
+                           Клаб-сэндвич с ветчиной и сыром
+                        </div>
+                        <div class="catalog-card__price">
+                           <div class="catalog-card__main-price">
+                              800
+                              <span>₽</span>
+                           </div>
+                           <div class="catalog-card__sale">
+                              <div class="catalog-card__sale-price">
+                                 600
+                                 <span>₽</span>
+                              </div>
+                              <div class="catalog-card__weight">/ 240 г</div>
+                           </div>
+                        </div>
+                        <div class="catalog-card__add-to-cart catalog-card-1__add-to-cart">
+                           <svg class="bag bag--dark">
+                              <use xlink:href="sprite.svg#bag"></use>
+                           </svg>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="catalog-card-1">
+                     <div class="catalog-card-1__img">
+                        <img src="./src/images/sandwichwithcofee.png" alt="" />
+                     </div>
+                     <div class="catalog-card-1__imgless">
+                        <img src="./src/images/item-missing.jpg" alt="" />
+                     </div>
+                     <div class="catalog-card-1__descr">
+                        <div href="/" class="catalog-card-1__title heading4">
+                           <a href="#" class="catalog-card-1__link-to-item"></a>
+                           Клаб-сэндвич с ветчиной и сыром
+                        </div>
+                        <div class="catalog-card__price">
+                           <div class="catalog-card__main-price">
+                              800
+                              <span>₽</span>
+                           </div>
+                           <div class="catalog-card__sale">
+                              <div class="catalog-card__sale-price">
+                                 600
+                                 <span>₽</span>
+                              </div>
+                              <div class="catalog-card__weight">/ 240 г</div>
+                           </div>
+                        </div>
+                        <div class="catalog-card__add-to-cart catalog-card-1__add-to-cart">
+                           <svg class="bag bag--dark">
+                              <use xlink:href="sprite.svg#bag"></use>
+                           </svg>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
+      @@include('./templates/footer.html')
+   </body>
+</html>

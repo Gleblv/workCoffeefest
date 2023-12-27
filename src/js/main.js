@@ -303,6 +303,22 @@ if (popupBlocks) {
    });
 }
 
+// Скрытие.показ меню на странице поиска
+
+if (document.querySelector(".search-main")) {
+   console.log("1");
+
+   const inputContainer = document.querySelector(".search-main__input"),
+      input = inputContainer.querySelector("input"),
+      list = inputContainer.querySelector(".search-main__input-list");
+
+   input.addEventListener("input", (e) => {
+      let target = e.target;
+
+      e.target.value ? inputContainer.classList.add("active") : inputContainer.classList.remove("active");
+   });
+}
+
 //показ нужного блока (выбор медота доставки) в карточке товара при оплате
 // const allItems = document.querySelectorAll('.delivery-method');
 // const deliveryCheckers = document.querySelectorAll(
