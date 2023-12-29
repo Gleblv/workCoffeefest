@@ -1,10 +1,12 @@
 .main-banner {
 	margin-top: 14.4rem;
-	height: 78.2rem;
+	// height: 78.2rem;
 	position: relative;
-	max-width: 192rem;
+	max-width: 256rem;
+	// width: 256rem;
 	margin-left: auto;
 	margin-right: auto;
+	background-color: $biege;
 	
 	// @media (min-height: 10em) {
 	// 	max-width: 1920px;

@@ -6,7 +6,7 @@
 
 html {
 	font-family: 'Circe'; // шрифт по умолчанию по сайту
-	font-size: 0.5208335vw; // на разрешении 1920 0.520835vw === 10px
+	font-size: 0.391vw; // на разрешении 1920 0.520835vw === 10px
 	font-style: normal;
 	font-weight: 400;
 	-webkit-animation: bugfix infinite 1s;
@@ -130,7 +130,7 @@ button {
 
 @media (min-width: 120em) {
 	html {
-		font-size: 10px;
+		font-size: 7.5px;
 		background-color: #fff9ee;
 	}
 
@@ -138,9 +138,8 @@ button {
 		margin: 0 auto;
 	}
 
-	.container {
-		margin: 0 auto;
-		max-width: 1600px;
+	.main {
+		background-color: #fff9ee;
 	}
 }
 
