@@ -6,7 +6,8 @@
 
 html {
 	font-family: 'Circe'; // шрифт по умолчанию по сайту
-	font-size: 0.391vw; // на разрешении 1920 0.520835vw === 10px
+	// font-size: 0.391vw; 
+	font-size: 7.5px; // на разрешении 1920 0.520835vw === 10px
 	font-style: normal;
 	font-weight: 400;
 	-webkit-animation: bugfix infinite 1s;
@@ -108,7 +109,6 @@ ul li {
 .container {
 	width: 160rem;
 	margin: 0 auto;
-	max-width: 1600px;
 }
 
 input[type='number']::-webkit-inner-spin-button,
@@ -128,20 +128,30 @@ button {
 	user-select: none;
 }
 
-@media (min-width: 120em) {
+@media (max-width: 1200px) {
 	html {
-		font-size: 7.5px;
-		background-color: #fff9ee;
+		font-size: 0.590vw;
 	}
 
-	body {
-		margin: 0 auto;
-	}
-
-	.main {
-		background-color: #fff9ee;
+	.container {
+		width: 160rem;
 	}
 }
+
+// @media (min-width: 1200px) {
+// 	html {
+// 		font-size: 7.5px;
+// 		background-color: #fff9ee;
+// 	}
+
+// 	body {
+// 		margin: 0 auto;
+// 	}
+
+// 	.main {
+// 		background-color: #fff9ee;
+// 	}
+// }
 
 @media (max-width: 48em) {
 	html {
