@@ -1,0 +1,22 @@
+.authorcoffee-banner {
+    max-width: 1920px;
+    margin: 0 auto;
+
+    &__img {
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    @media (max-width: 48em) {
+        min-height: 105rem;
+        height: calc(100dvh - 18.2rem);
+        background-color: #fff9ee;
+        background-image: url(../images/background-12-mobile.webp);
+    }
+}
