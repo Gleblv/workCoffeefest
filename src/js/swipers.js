@@ -452,4 +452,23 @@ document.addEventListener("DOMContentLoaded", function () {
          },
       },
    });
+
+   const whyUsSwiper = new Swiper(".why-us__swiper", {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      allowTouchMove: true,
+      spaceBetween: 35,
+
+      breakpoints: {
+         768: {
+            slidesPerView: 4,
+            allowTouchMove: false,
+            spaceBetween: 20,
+         },
+      },
+
+      pagination: {
+         el: ".why-us__swiper-pagination",
+      },
+   });
 });

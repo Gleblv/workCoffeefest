@@ -447,6 +447,73 @@ if (window.screen.width <= 768) {
    });
 }
 
+// Открытие меню калькулятора
+
+if (document.querySelector(".calculator")) {
+   const options = document.querySelectorAll(".calculator__option"),
+      optionItems = document.querySelectorAll(".calculator__option-menu__item");
+
+   options.forEach((option) => {
+      option.addEventListener("click", (e) => {
+         let target = e.target;
+
+         target.classList.contains("calculator__option-head") && option.classList.toggle("active");
+      });
+   });
+
+   optionItems.forEach((item) => {
+      item.addEventListener("click", () => {
+         let option = item.closest(".calculator__option");
+         let heading = item.querySelector(".calculator__option-menu__item-heading");
+         let headText = option.querySelector(".calculator__option-text");
+
+         headText.textContent = `${heading.textContent}`;
+
+         option.classList.remove("active");
+         option.classList.add("success");
+      });
+   });
+
+   // ------------------------------------------------------------------------------
+
+   const btns = document.querySelectorAll(".calculator__weight-btn"),
+      counstInput = document.querySelector(".calculator__weight-count");
+
+   let count = 1;
+
+   btns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+         if (btn.classList.contains("btn-minus") && count > 0) {
+            count--;
+         }
+
+         btn.classList.contains("btn-plus") && count++;
+
+         counstInput.textContent = `${count} кг`;
+      });
+   });
+}
+
+//
+
+if (document.querySelector(".notes") && window.screen.width < 768) {
+   const togglebBtn = document.querySelector(".notes__show-all"),
+      textContainer = document.querySelector(".notes__list"),
+      initialHeight = textContainer.clientHeight;
+
+   togglebBtn.addEventListener("click", () => {
+      textContainer.classList.toggle("active");
+
+      if (textContainer.classList.contains("active")) {
+         textContainer.style.maxHeight = `${textContainer.scrollHeight}px`;
+         togglebBtn.textContent = "Скрыть";
+      } else {
+         textContainer.style.maxHeight = `${initialHeight}px`;
+         togglebBtn.textContent = "Читать всё";
+      }
+   });
+}
+
 const massive = ["21-01-2023", "10-09-2023", "21-10-2023", "25-10-2023", "11-10-2023", "02-11-2023"];
 
 const calendarIds = ["calendar1"];

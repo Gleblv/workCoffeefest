@@ -1,388 +1,387 @@
 //функция валидации форм
 const initValidation = () => {
-	const validateInput = (inputElement, regex) => {
-		const inputContainer = inputElement.parentElement;
+   const validateInput = (inputElement, regex) => {
+      const inputContainer = inputElement.parentElement;
 
-		const inputHandler = (e) => {
-			let inputClass = regex.test(e.target.value) ? 'success' : 'invalid';
-			inputContainer.classList.remove('success', 'invalid');
-			inputContainer.classList.add(inputClass);
+      const inputHandler = (e) => {
+         let inputClass = regex.test(e.target.value) ? "success" : "invalid";
+         inputContainer.classList.remove("success", "invalid");
+         inputContainer.classList.add(inputClass);
 
-			if (e.target.value === '') {
-				inputContainer.classList.remove('success', 'invalid');
-			}
-		};
+         if (e.target.value === "") {
+            inputContainer.classList.remove("success", "invalid");
+         }
+      };
 
-		inputElement.removeEventListener('input', inputHandler);
-		inputElement.addEventListener('input', inputHandler);
-	};
+      inputElement.removeEventListener("input", inputHandler);
+      inputElement.addEventListener("input", inputHandler);
+   };
 
-	// Валидация имени
-	const inputName = document.querySelectorAll('.input-name');
-	if (inputName.length > 0) {
-		const regName = /^[A-zА-яё]+$/;
-		inputName.forEach((item) => {
-			validateInput(item, regName);
-		});
-	}
+   // Валидация имени
+   const inputName = document.querySelectorAll(".input-name");
+   if (inputName.length > 0) {
+      const regName = /^[A-zА-яё]+$/;
+      inputName.forEach((item) => {
+         validateInput(item, regName);
+      });
+   }
 
-	// Валидация почты
-	const inputEmail = document.querySelectorAll('.input-email');
-	if (inputEmail.length > 0) {
-		const regEmail = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/gim;
-		inputEmail.forEach((item) => {
-			validateInput(item, regEmail);
-		});
-	}
+   // Валидация почты
+   const inputEmail = document.querySelectorAll(".input-email");
+   if (inputEmail.length > 0) {
+      const regEmail = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/gim;
+      inputEmail.forEach((item) => {
+         validateInput(item, regEmail);
+      });
+   }
 
-	// Валидация телефонного номера
-	const inputPhone = document.querySelectorAll('.input-tel');
-	if (inputPhone.length > 0) {
-		const regPhone =
-			/^\+?\d{1,4}[\s.-]?\(?\d{1,3}\)?[\s.-]?\d{1,4}[\s.-]?\d{1,4}$/;
-		inputPhone.forEach((item) => {
-			validateInput(item, regPhone);
-		});
-	}
+   // Валидация телефонного номера
+   const inputPhone = document.querySelectorAll(".input-tel");
+   if (inputPhone.length > 0) {
+      const regPhone = /^\+?\d{1,4}[\s.-]?\(?\d{1,3}\)?[\s.-]?\d{1,4}[\s.-]?\d{1,4}$/;
+      inputPhone.forEach((item) => {
+         validateInput(item, regPhone);
+      });
+   }
 };
 
 // Вызов функции для инициализации валидации
 initValidation();
-document.addEventListener('DOMContentLoaded', initValidation);
+document.addEventListener("DOMContentLoaded", initValidation);
 //инициируем карту
 const mapInitSecond = () => {
-	const searchItems = document.querySelectorAll('.map-block__search-item');
-	const mapModal = document.querySelector('.modal-map');
-	const activeClass = 'active';
-	const root = document.querySelector('#root');
+   const searchItems = document.querySelectorAll(".map-block__search-item");
+   const mapModal = document.querySelector(".modal-map");
+   const activeClass = "active";
+   const root = document.querySelector("#root");
 
-	//яндекс карта
-	if (root) {
-		const init = () => {
-			const map = new ymaps.Map('root', {
-				center: [55.807749, 37.570141],
-				zoom: 14,
-				type: 'yandex#map',
-				controls: [],
-			});
+   //яндекс карта
+   if (root) {
+      const init = () => {
+         const map = new ymaps.Map("root", {
+            center: [55.807749, 37.570141],
+            zoom: 14,
+            type: "yandex#map",
+            controls: [],
+         });
 
-			const myBlueIcon = new ymaps.Placemark(
-				[55.807749, 37.570141],
-				{},
-				{
-					iconLayout: 'default#image',
-					iconImageHref: './src/images/svg/generic/geo-map-blue.svg',
-					iconImageSize: [66, 74],
-				},
-			);
+         const myBlueIcon = new ymaps.Placemark(
+            [55.807749, 37.570141],
+            {},
+            {
+               iconLayout: "default#image",
+               iconImageHref: "./src/images/svg/generic/geo-map-blue.svg",
+               iconImageSize: [66, 74],
+            }
+         );
 
-			const myBiegeIcon = new ymaps.Placemark(
-				[55.810479, 37.570991],
-				{},
-				{
-					iconLayout: 'default#image',
-					iconImageHref: './src/images/svg/generic/geo-map-biege.svg',
-					iconImageSize: [66, 74],
-				},
-			);
+         const myBiegeIcon = new ymaps.Placemark(
+            [55.810479, 37.570991],
+            {},
+            {
+               iconLayout: "default#image",
+               iconImageHref: "./src/images/svg/generic/geo-map-biege.svg",
+               iconImageSize: [66, 74],
+            }
+         );
 
-			const myGreenIcon = new ymaps.Placemark(
-				[55.820479, 37.578991],
-				{},
-				{
-					iconLayout: 'default#image',
-					iconImageHref: './src/images/svg/generic/geo-map-green.svg',
-					iconImageSize: [66, 74],
-				},
-			);
+         const myGreenIcon = new ymaps.Placemark(
+            [55.820479, 37.578991],
+            {},
+            {
+               iconLayout: "default#image",
+               iconImageHref: "./src/images/svg/generic/geo-map-green.svg",
+               iconImageSize: [66, 74],
+            }
+         );
 
-			myGreenIcon.events.add('click', () => {
-				mapModal.classList.add(activeClass);
-			});
+         myGreenIcon.events.add("click", () => {
+            mapModal.classList.add(activeClass);
+         });
 
-			myBlueIcon.events.add('click', () => {
-				mapModal.classList.add(activeClass);
-			});
+         myBlueIcon.events.add("click", () => {
+            mapModal.classList.add(activeClass);
+         });
 
-			myBiegeIcon.events.add('click', () => {
-				mapModal.classList.add(activeClass);
-			});
+         myBiegeIcon.events.add("click", () => {
+            mapModal.classList.add(activeClass);
+         });
 
-			map.geoObjects.add(myBlueIcon);
-			map.geoObjects.add(myBiegeIcon);
-			map.geoObjects.add(myGreenIcon);
+         map.geoObjects.add(myBlueIcon);
+         map.geoObjects.add(myBiegeIcon);
+         map.geoObjects.add(myGreenIcon);
 
-			// скрыть все элементы управления картой
-			map.options.set('suppressMapOpenBlock', true);
-		};
-		ymaps.ready(init);
-	}
+         // скрыть все элементы управления картой
+         map.options.set("suppressMapOpenBlock", true);
+      };
+      ymaps.ready(init);
+   }
 
-	//открыть модалку по клику по карточке в списке адресов
-	if (searchItems && mapModal) {
-		const activeClass = 'active';
-		searchItems.forEach((item, id) => {
-			const link = item.querySelector('.arrow-link');
+   //открыть модалку по клику по карточке в списке адресов
+   if (searchItems && mapModal) {
+      const activeClass = "active";
+      searchItems.forEach((item, id) => {
+         const link = item.querySelector(".arrow-link");
 
-			const linkClickHandler = () => {
-				mapModal.classList.add(activeClass);
+         const linkClickHandler = () => {
+            mapModal.classList.add(activeClass);
 
-				if (item.classList.contains(activeClass)) {
-					return;
-				} else {
-					searchItems.forEach((element, index) => {
-						if (id === index) {
-							element.classList.add(activeClass);
-						} else {
-							if (element.classList.contains(activeClass)) {
-								element.classList.remove(activeClass);
-							}
-						}
-					});
-				}
-			};
-			link.removeEventListener('click', linkClickHandler);
-			link.addEventListener('click', linkClickHandler);
-		});
-	}
+            if (item.classList.contains(activeClass)) {
+               return;
+            } else {
+               searchItems.forEach((element, index) => {
+                  if (id === index) {
+                     element.classList.add(activeClass);
+                  } else {
+                     if (element.classList.contains(activeClass)) {
+                        element.classList.remove(activeClass);
+                     }
+                  }
+               });
+            }
+         };
+         link.removeEventListener("click", linkClickHandler);
+         link.addEventListener("click", linkClickHandler);
+      });
+   }
 
-	//инициируем слайдер для модалки внутри карты
+   //инициируем слайдер для модалки внутри карты
 
-	const modalMapSwiper = new Swiper('.modal-map__swiper', {
-		slidesPerView: 1,
-		pagination: {
-			clickable: true,
-			el: '.modal-map__swiper-pagination',
-		},
-	});
+   const modalMapSwiper = new Swiper(".modal-map__swiper", {
+      slidesPerView: 1,
+      pagination: {
+         clickable: true,
+         el: ".modal-map__swiper-pagination",
+      },
+   });
 
-	closeMapModal();
+   closeMapModal();
 };
 
 //закрытие модалки для карты клик вне поля и по кнопке
 const closeMapModal = () => {
-	const madals = document.querySelectorAll('.modal-map');
-	madals.forEach((block) => {
-		const buttons = block.querySelectorAll('.modal__close-btn');
-		const removeActiveClass = () => {
-			block.classList.remove('active');
-		};
+   const madals = document.querySelectorAll(".modal-map");
+   madals.forEach((block) => {
+      const buttons = block.querySelectorAll(".modal__close-btn");
+      const removeActiveClass = () => {
+         block.classList.remove("active");
+      };
 
-		buttons.forEach((btn) => {
-			btn.removeEventListener('click', removeActiveClass);
-			btn.addEventListener('click', removeActiveClass);
-		});
+      buttons.forEach((btn) => {
+         btn.removeEventListener("click", removeActiveClass);
+         btn.addEventListener("click", removeActiveClass);
+      });
 
-		block.addEventListener('click', (e) => {
-			if (e.target === block) {
-				block.classList.remove('active');
-			}
-		});
-	});
+      block.addEventListener("click", (e) => {
+         if (e.target === block) {
+            block.classList.remove("active");
+         }
+      });
+   });
 };
 closeMapModal();
 
 const closeModalHandler = () => {
-	const modals = document.querySelectorAll('.modal');
-	if (!modals) return;
+   const modals = document.querySelectorAll(".modal");
+   if (!modals) return;
 
-	modals.forEach((mod) => {
-		const closeBtn = mod.querySelector('.modal__close-btn');
-		const modalRemove = () => {
-			mod.classList.remove('active');
-		};
-		closeBtn.removeEventListener('click', modalRemove);
-		closeBtn.addEventListener('click', modalRemove);
+   modals.forEach((mod) => {
+      const closeBtn = mod.querySelector(".modal__close-btn");
+      const modalRemove = () => {
+         mod.classList.remove("active");
+      };
+      closeBtn.removeEventListener("click", modalRemove);
+      closeBtn.addEventListener("click", modalRemove);
 
-		mod.addEventListener('click', (e) => {
-			if (e.target === mod) {
-				mod.classList.remove('active');
-				mod.addEventListener('transitionend', transitionHandler);
-			}
-		});
-	});
+      mod.addEventListener("click", (e) => {
+         if (e.target === mod) {
+            mod.classList.remove("active");
+            mod.addEventListener("transitionend", transitionHandler);
+         }
+      });
+   });
 };
 
 const removeCheckers = () => {
-	const modal = document.querySelectorAll(`.teg-list`);
-	modal.forEach((list) => {
-		const inputs = list.querySelectorAll('input');
-		inputs.forEach((item) => {
-			item.checked = false;
-		});
-	});
+   const modal = document.querySelectorAll(`.teg-list`);
+   modal.forEach((list) => {
+      const inputs = list.querySelectorAll("input");
+      inputs.forEach((item) => {
+         item.checked = false;
+      });
+   });
 };
 
 const clearFilter = () => {
-	const clearBtn = document.querySelectorAll('#clear-filter');
-	if (clearBtn) {
-		clearBtn.forEach((item) => {
-			item.removeEventListener('click', removeCheckers);
-			item.addEventListener('click', removeCheckers);
-		});
-	}
+   const clearBtn = document.querySelectorAll("#clear-filter");
+   if (clearBtn) {
+      clearBtn.forEach((item) => {
+         item.removeEventListener("click", removeCheckers);
+         item.addEventListener("click", removeCheckers);
+      });
+   }
 };
 
 const initStarsRate = () => {
-	const mainWrapper = document.querySelector('.feedback');
-	const iconsWrapper = document.querySelector('.rates__icons-wrapper');
-	const inputImg = document.querySelector('.upload__input');
-	const inputLabel = document.querySelector('.upload__input-label');
-	const inputText = document.querySelector('.upload__info');
-	const previewImages = document.querySelectorAll('.upload__preview-box');
-	const removeBtns = document.querySelectorAll('.upload__preview-box-remove');
-	const removeDataBtn = document.querySelector('#remove-feedback-data');
+   const mainWrapper = document.querySelector(".feedback");
+   const iconsWrapper = document.querySelector(".rates__icons-wrapper");
+   const inputImg = document.querySelector(".upload__input");
+   const inputLabel = document.querySelector(".upload__input-label");
+   const inputText = document.querySelector(".upload__info");
+   const previewImages = document.querySelectorAll(".upload__preview-box");
+   const removeBtns = document.querySelectorAll(".upload__preview-box-remove");
+   const removeDataBtn = document.querySelector("#remove-feedback-data");
 
-	// добавляем счетчик на символы
-	initTextvalueCounter();
+   // добавляем счетчик на символы
+   initTextvalueCounter();
 
-	const imagesCounter = () => {
-		let validImageCount = 0;
-		for (const item of previewImages) {
-			const img = item.querySelector('img');
-			if (img.getAttribute('src')?.length) {
-				validImageCount++;
-			}
-		}
+   const imagesCounter = () => {
+      let validImageCount = 0;
+      for (const item of previewImages) {
+         const img = item.querySelector("img");
+         if (img.getAttribute("src")?.length) {
+            validImageCount++;
+         }
+      }
 
-		if (validImageCount === 5) {
-			inputLabel.style.display = 'none';
-			inputText.style.display = 'none';
-		} else {
-			inputLabel.style.display = 'block';
-			inputText.style.display = 'flex';
-		}
-	};
+      if (validImageCount === 5) {
+         inputLabel.style.display = "none";
+         inputText.style.display = "none";
+      } else {
+         inputLabel.style.display = "block";
+         inputText.style.display = "flex";
+      }
+   };
 
-	if (iconsWrapper && inputImg && removeBtns && removeDataBtn) {
-		//отображение :hover и постоянного выбранного состояния для иконок рейтинга
+   if (iconsWrapper && inputImg && removeBtns && removeDataBtn) {
+      //отображение :hover и постоянного выбранного состояния для иконок рейтинга
 
-		const icons = iconsWrapper.querySelectorAll('.rates__icon');
-		icons.forEach((icon, id) => {
-			const eventHandler = () => {
-				icons.forEach((currentIcon, i) => {
-					if (i <= id) {
-						currentIcon.classList.add('active');
-					} else {
-						currentIcon.classList.remove('active');
-					}
-				});
-			};
-			icon.removeEventListener('click', eventHandler);
-			icon.addEventListener('click', eventHandler);
+      const icons = iconsWrapper.querySelectorAll(".rates__icon");
+      icons.forEach((icon, id) => {
+         const eventHandler = () => {
+            icons.forEach((currentIcon, i) => {
+               if (i <= id) {
+                  currentIcon.classList.add("active");
+               } else {
+                  currentIcon.classList.remove("active");
+               }
+            });
+         };
+         icon.removeEventListener("click", eventHandler);
+         icon.addEventListener("click", eventHandler);
 
-			const mouseOverHandler = () => {
-				icons.forEach((currentIcon, i) => {
-					currentIcon.classList.add('hover-zero');
-					if (i <= id) {
-						currentIcon.classList.add('hover-active');
-					} else {
-						currentIcon.classList.remove('hover-active');
-					}
-				});
-			};
-			const mouseOutHandler = () => {
-				icons.forEach((currentIcon) => {
-					currentIcon.classList.remove('hover-zero');
-					currentIcon.classList.remove('hover-active');
-				});
-			};
-			icon.removeEventListener('mouseover', mouseOverHandler);
-			icon.addEventListener('mouseover', mouseOverHandler);
+         const mouseOverHandler = () => {
+            icons.forEach((currentIcon, i) => {
+               currentIcon.classList.add("hover-zero");
+               if (i <= id) {
+                  currentIcon.classList.add("hover-active");
+               } else {
+                  currentIcon.classList.remove("hover-active");
+               }
+            });
+         };
+         const mouseOutHandler = () => {
+            icons.forEach((currentIcon) => {
+               currentIcon.classList.remove("hover-zero");
+               currentIcon.classList.remove("hover-active");
+            });
+         };
+         icon.removeEventListener("mouseover", mouseOverHandler);
+         icon.addEventListener("mouseover", mouseOverHandler);
 
-			iconsWrapper.removeEventListener('mouseout', mouseOutHandler);
-			iconsWrapper.addEventListener('mouseout', mouseOutHandler);
-		});
+         iconsWrapper.removeEventListener("mouseout", mouseOutHandler);
+         iconsWrapper.addEventListener("mouseout", mouseOutHandler);
+      });
 
-		//загрузка изображений с превью в модалке
+      //загрузка изображений с превью в модалке
 
-		const addImgHandler = () => {
-			const selectedFile = inputImg.files.item(0);
-			const reader = new FileReader();
-			reader.readAsDataURL(selectedFile);
-			reader.onload = function (event) {
-				for (const item of previewImages) {
-					const img = item.querySelector('img');
+      const addImgHandler = () => {
+         const selectedFile = inputImg.files.item(0);
+         const reader = new FileReader();
+         reader.readAsDataURL(selectedFile);
+         reader.onload = function (event) {
+            for (const item of previewImages) {
+               const img = item.querySelector("img");
 
-					if (!img.hasAttribute('src') || img.getAttribute('src') === '') {
-						item.classList.add('active');
-						img.src = event.target.result;
-						imagesCounter();
-						break;
-					}
-				}
-			};
-		};
+               if (!img.hasAttribute("src") || img.getAttribute("src") === "") {
+                  item.classList.add("active");
+                  img.src = event.target.result;
+                  imagesCounter();
+                  break;
+               }
+            }
+         };
+      };
 
-		inputImg.removeEventListener('change', addImgHandler);
-		inputImg.addEventListener('change', addImgHandler);
+      inputImg.removeEventListener("change", addImgHandler);
+      inputImg.addEventListener("change", addImgHandler);
 
-		// удаление одного изображения
-		removeBtns.forEach((btn) => {
-			const removeImgHandler = () => {
-				const wrapper = btn.closest('.upload__preview-box');
-				const img = wrapper.querySelector('img');
-				img.removeAttribute('src');
-				imagesCounter();
-				wrapper.classList.remove('active');
-			};
-			btn.removeEventListener('click', removeImgHandler);
-			btn.addEventListener('click', removeImgHandler);
-		});
+      // удаление одного изображения
+      removeBtns.forEach((btn) => {
+         const removeImgHandler = () => {
+            const wrapper = btn.closest(".upload__preview-box");
+            const img = wrapper.querySelector("img");
+            img.removeAttribute("src");
+            imagesCounter();
+            wrapper.classList.remove("active");
+         };
+         btn.removeEventListener("click", removeImgHandler);
+         btn.addEventListener("click", removeImgHandler);
+      });
 
-		removeDataBtn.addEventListener('click', () => {
-			const allTextareas = document.querySelectorAll('textarea');
-			const icons = document.querySelectorAll('.rates__icon');
-			const inputImg = document.querySelector('.upload__input');
-			const textareaCounter = document.querySelector('.modal__textarea-limits');
-			//чистка всех input & textarea
-			inputImg.value = '';
+      removeDataBtn.addEventListener("click", () => {
+         const allTextareas = document.querySelectorAll("textarea");
+         const icons = document.querySelectorAll(".rates__icon");
+         const inputImg = document.querySelector(".upload__input");
+         const textareaCounter = document.querySelector(".modal__textarea-limits");
+         //чистка всех input & textarea
+         inputImg.value = "";
 
-			allTextareas.forEach((element) => {
-				element.value = '';
-				textareaCounter.textContent = '0/1000';
-			});
-			//чистка всех star-icons
-			icons.forEach((element) => {
-				element.classList = 'rates__icon';
-			});
-			//удаление всех изображений
-			previewImages.forEach((image) => {
-				image.classList.remove('active');
-				const tag = image.querySelector('img');
-				tag.src = '';
-			});
-			imagesCounter();
-		});
-	}
+         allTextareas.forEach((element) => {
+            element.value = "";
+            textareaCounter.textContent = "0/1000";
+         });
+         //чистка всех star-icons
+         icons.forEach((element) => {
+            element.classList = "rates__icon";
+         });
+         //удаление всех изображений
+         previewImages.forEach((image) => {
+            image.classList.remove("active");
+            const tag = image.querySelector("img");
+            tag.src = "";
+         });
+         imagesCounter();
+      });
+   }
 };
 
 const addMapModal = () => {
-	const mapBtn = document.querySelectorAll('#map');
-	const modalClass = 'map-modal';
+   const mapBtn = document.querySelectorAll("#map");
+   const modalClass = "map-modal";
 
-	if (!modalClass) return;
+   if (!modalClass) return;
 
-	const initMap = () => {
-		initModal(modalClass);
-		mapInitSecond();
-		addFeedbackModal();
-		//удаляем модалку активную перед показом карты
-		const modal = document.querySelector(`.is-correct-adress`);
-		if (modal) {
-			modal.classList.remove('active');
-		}
-	};
+   const initMap = () => {
+      initModal(modalClass);
+      mapInitSecond();
+      addFeedbackModal();
+      //удаляем модалку активную перед показом карты
+      const modal = document.querySelector(`.is-correct-adress`);
+      if (modal) {
+         modal.classList.remove("active");
+      }
+   };
 
-	mapBtn?.forEach((btn) => {
-		btn.addEventListener('click', initMap);
-	});
+   mapBtn?.forEach((btn) => {
+      btn.addEventListener("click", initMap);
+   });
 };
 
-const modalsBox = document.querySelector('.modal__box');
+const modalsBox = document.querySelector(".modal__box");
 
 const modals = {
-	'filter-modal-1': `<div class="modal active filter-modal-1">
+   "filter-modal-1": `<div class="modal active filter-modal-1">
 	<div class="modal__container">
 	<button class="modal__close-btn"></button>
 	<div class="modal__root">
@@ -434,7 +433,7 @@ const modals = {
 		</div>
 	</div>
 		</div>`,
-	'filter-modal': `<div class="modal active filter-modal">
+   "filter-modal": `<div class="modal active filter-modal">
 	<div class="modal__container">
 		<button class="modal__close-btn"></button>
 		<div class="modal__root"><div class="teg-list">
@@ -484,7 +483,7 @@ const modals = {
 	</div></div>
 	</div>
   	</div>`,
-	'is-correct-adress': `<div class="modal active is-correct-adress">
+   "is-correct-adress": `<div class="modal active is-correct-adress">
 <div class="modal__container">
 	<button class="modal__close-btn"></button>
 	<div class="modal__root">
@@ -517,7 +516,7 @@ const modals = {
 	</div>
 </div>
   	</div>`,
-	'map-modal': `
+   "map-modal": `
 	<div class="modal active map-modal">
 	<div class="modal__container">
 		<button class="modal__close-btn"></button>
@@ -922,7 +921,7 @@ const modals = {
 				</div>
 						</div>
 		</div> `,
-	'feedback-modal': `<div class="modal active feedback-modal">
+   "feedback-modal": `<div class="modal active feedback-modal">
 		<div class="modal__container">
 			<button class="modal__close-btn"></button>
 			<div class="modal__root">
@@ -1029,7 +1028,7 @@ const modals = {
 			</div>
 		</div>
 	</div>`,
-	'request-sended-modal': `<div class="modal active request-sended-modal">
+   "request-sended-modal": `<div class="modal active request-sended-modal">
 	<div class="modal__container">
 		<button class="modal__close-btn"></button>
 		<div class="modal__root">
@@ -1042,7 +1041,7 @@ const modals = {
 		</div>
 	</div>
 	</div>`,
-	'text-us': `
+   "text-us": `
 	<div class="modal active text-us">
 	<div class="modal__container">
 		<button class="modal__close-btn"></button>
@@ -1113,7 +1112,7 @@ const modals = {
 		</div>
 	</div>
 	</div>`,
-	'unavailable-modal': `<div class="modal unavailable-modal active">
+   "unavailable-modal": `<div class="modal unavailable-modal active">
 	<div class="modal__container">
 		<button class="modal__close-btn"></button>
 		<div class="modal__root"><div class="modal__content-box">
@@ -1361,7 +1360,7 @@ const modals = {
 	</div>
 	</div>
 	</div>`,
-	'personal-info-modal': `
+   "personal-info-modal": `
 	<div class="modal personal-info-modal active">
 	<div class="modal__container">
 		<button class="modal__close-btn"></button>
@@ -1441,7 +1440,7 @@ const modals = {
 		</div>
 		</div>
 		</div>`,
-	'chage-password-modal': `<div class="modal chage-password-modal active">
+   "chage-password-modal": `<div class="modal chage-password-modal active">
 		<div class="modal__container">
 			<button class="modal__close-btn"></button>
 			<div class="modal__root">
@@ -1515,7 +1514,7 @@ const modals = {
 			</div>
 		</div>
 	</div>`,
-	'add-adress': `<div class="modal add-adress active">
+   "add-adress": `<div class="modal add-adress active">
 	<div class="modal__container">
 		<button class="modal__close-btn"></button>
 		<div class="modal__root">
@@ -1627,7 +1626,7 @@ const modals = {
 				</div>
 				</div>
 				</div>`,
-	'edit-adress': `<div class="modal edit-adress active">
+   "edit-adress": `<div class="modal edit-adress active">
 	<div class="modal__container">
 		<button class="modal__close-btn"></button>
 		<div class="modal__root">
@@ -1869,7 +1868,7 @@ const modals = {
 	</div>
 	</div>
 	</div>`,
-	'vacancy-modal': `<div class="modal vacancy-modal active">
+   "vacancy-modal": `<div class="modal vacancy-modal active">
 	<div class="modal__container">
 		<button class="modal__close-btn"></button>
 		<div class="modal__root">
@@ -1916,7 +1915,7 @@ const modals = {
 	</div>
 	</div>
 	</div>`,
-	'promotion-modal': `<div class="modal vacancy-modal active">
+   "promotion-modal": `<div class="modal vacancy-modal active">
 		<div class="modal__container">
 			<button class="modal__close-btn"></button>
 			<div class="modal__root">
@@ -1951,7 +1950,71 @@ const modals = {
 					</div>
 		</div>
 		</div>`,
-	partnership: `<div class="modal partnership active">
+   "calculator-first-modal": `
+	<div class="modal personal-info-modal active">
+	<div class="modal__container">
+		<button class="modal__close-btn"></button>
+		<div class="modal__root">
+		<p class="heading2">Введите ваши данные</p>
+<form class="modal__form">
+	<div class="input-container modal__input-medium">
+		<input
+			type="text"
+			id="name"
+			class="input input-name"
+			placeholder="Имя" />
+		<label
+			for="name"
+			class="input-label">
+			Имя
+		</label>
+		<div class="icon success"></div>
+		<div class="icon invalid"></div>
+		<div class="input-status">Неверный формат</div>
+	</div>
+
+	<div class="input-container modal__input-medium">
+		<input
+			type="number"
+			id="tel"
+			class="input input-tel"
+			placeholder="Телефон" />
+		<label
+			for="tel"
+			class="input-label">
+			Телефон
+		</label>
+		<div class="icon success"></div>
+		<div class="icon invalid"></div>
+		<div class="input-status">Неверный формат</div>
+	</div>
+</form>
+
+<div class="modal__btns modal__btns--center">
+	<button class="square-btn blue-square-btn calclulcator-first-modal-btn">
+		<span>отправить заявку</span>
+	</button>
+</div>
+		</div>
+		</div>
+		</div>`,
+   "calculator-second-modal": `
+	<div class="modal personal-info-modal active">
+	<div class="modal__container">
+		<button class="modal__close-btn"></button>
+		<div class="modal__root">
+		<p class="heading2">Заявка успешно отправлена</p>
+
+		<div class="modal__btns modal__btns--center">
+			<button class="square-btn blue-square-btn">
+				<span>вернуться на сайт</span>
+			</button>
+		</div>
+		</div>
+		</div>
+		</div>
+	`,
+   partnership: `<div class="modal partnership active">
 	<div class="modal__container">
 		<button class="modal__close-btn"></button>
 		<div class="modal__root"><p class="heading2">Регистрация</p>
@@ -1996,239 +2059,259 @@ const modals = {
 	</div>
 </div>`,
 
-	closeHandler: () => {
-		closeModalHandler();
-	},
-	filterHandler: () => {
-		clearFilter();
-	},
-	addMap: () => {
-		addMapModal();
-	},
+   closeHandler: () => {
+      closeModalHandler();
+   },
+   filterHandler: () => {
+      clearFilter();
+   },
+   addMap: () => {
+      addMapModal();
+   },
 };
 
 //обычное добавление модалки + добавление функции закрытия
 const initModal = (modalClass) => {
-	const modal = document.querySelector(`.${modalClass}`);
-	const allModals = document.querySelectorAll('.modal');
-	allModals.forEach((el) => {
-		el.classList.remove('active');
-	});
-	if (modal) {
-		modal.classList.add('active');
-		return;
-	}
-	modalsBox.innerHTML += modals[modalClass];
-	modals.closeHandler();
-	initValidation();
+   const modal = document.querySelector(`.${modalClass}`);
+   const allModals = document.querySelectorAll(".modal");
+   allModals.forEach((el) => {
+      el.classList.remove("active");
+   });
+   if (modal) {
+      modal.classList.add("active");
+      return;
+   }
+   modalsBox.innerHTML += modals[modalClass];
+   modals.closeHandler();
+   initValidation();
 };
 
 //добавление модалки новостей (фильтр)
-const filterBtnNews = document.querySelector('#filter-modal-1');
+const filterBtnNews = document.querySelector("#filter-modal-1");
 if (filterBtnNews) {
-	const modalClass = 'filter-modal-1';
+   const modalClass = "filter-modal-1";
 
-	filterBtnNews.addEventListener('click', () => {
-		initModal(modalClass);
-		modals.filterHandler();
-	});
+   filterBtnNews.addEventListener("click", () => {
+      initModal(modalClass);
+      modals.filterHandler();
+   });
 }
 
 //добавление модалки категорий (фильтр)
-const filterBtnCategory = document.querySelector('#filter-modal');
+const filterBtnCategory = document.querySelector("#filter-modal");
 if (filterBtnCategory) {
-	const modalClass = 'filter-modal';
-	filterBtnCategory.addEventListener('click', () => {
-		initModal(modalClass);
-		modals.filterHandler();
-	});
+   const modalClass = "filter-modal";
+   filterBtnCategory.addEventListener("click", () => {
+      initModal(modalClass);
+      modals.filterHandler();
+   });
 }
 
 //добавим модалку для отзывов при вызове из модалки
 const addFeedbackModal = () => {
-	const wrapper = document.querySelector('.map-block__map-box');
-	const feedbackBtn = wrapper?.querySelector('#left-feedback');
+   const wrapper = document.querySelector(".map-block__map-box");
+   const feedbackBtn = wrapper?.querySelector("#left-feedback");
 
-	if (feedbackBtn) {
-		const modalClass = 'feedback-modal';
+   if (feedbackBtn) {
+      const modalClass = "feedback-modal";
 
-		const feedbackHandler = (e) => {
-			const isCorrect = e.currentTarget === feedbackBtn;
-			if (isCorrect) {
-				initModal(modalClass);
-				initStarsRate();
-			}
-		};
-		feedbackBtn.removeEventListener('click', feedbackHandler);
-		feedbackBtn.addEventListener('click', feedbackHandler);
-		return;
-	}
+      const feedbackHandler = (e) => {
+         const isCorrect = e.currentTarget === feedbackBtn;
+         if (isCorrect) {
+            initModal(modalClass);
+            initStarsRate();
+         }
+      };
+      feedbackBtn.removeEventListener("click", feedbackHandler);
+      feedbackBtn.addEventListener("click", feedbackHandler);
+      return;
+   }
 };
 addFeedbackModal();
 
 //добавление модалки уточнения адреса
-const refiningAddressBtn = document.querySelector('#geo');
+const refiningAddressBtn = document.querySelector("#geo");
 if (refiningAddressBtn) {
-	const modalClass = 'is-correct-adress';
-	refiningAddressBtn.addEventListener('click', () => {
-		initModal(modalClass);
-		modals.addMap();
-	});
+   const modalClass = "is-correct-adress";
+   refiningAddressBtn.addEventListener("click", () => {
+      initModal(modalClass);
+      modals.addMap();
+   });
 }
 
 //добавление модалки отправить заявку
 const sendedModalHandler = () => {
-	const wrapper = document.querySelectorAll('.modal__container');
-	const modalClass = 'request-sended-modal';
+   const wrapper = document.querySelectorAll(".modal__container");
+   const modalClass = "request-sended-modal";
 
-	const clickHandler = () => {
-		initModal(modalClass);
-	};
+   const clickHandler = () => {
+      initModal(modalClass);
+   };
 
-	wrapper.forEach((box) => {
-		const btn = box.querySelector('#text-us-confirmation');
-		btn.removeEventListener('click', clickHandler);
-		btn.addEventListener('click', clickHandler);
-	});
+   wrapper.forEach((box) => {
+      const btn = box.querySelector("#text-us-confirmation");
+      btn.removeEventListener("click", clickHandler);
+      btn.addEventListener("click", clickHandler);
+   });
 };
 sendedModalHandler();
 
 const sendModalHandlerSecond = () => {
-	const btns = document.querySelectorAll('.request-btn');
-	const modalClass = 'request-sended-modal';
+   const btns = document.querySelectorAll(".request-btn");
+   const modalClass = "request-sended-modal";
 
-	const clickHandler = (e) => {
-		e.preventDefault();
-		initModal(modalClass);
-	};
+   const clickHandler = (e) => {
+      e.preventDefault();
+      initModal(modalClass);
+   };
 
-	btns.forEach((btn) => {
-		btn.removeEventListener('click', clickHandler);
-		btn.addEventListener('click', clickHandler);
-	});
+   btns.forEach((btn) => {
+      btn.removeEventListener("click", clickHandler);
+      btn.addEventListener("click", clickHandler);
+   });
 };
 sendModalHandlerSecond();
 
 //добавление модалки оставить заявку
-const sendRequestBtns = document.querySelectorAll('#text-us');
+const sendRequestBtns = document.querySelectorAll("#text-us");
 if (sendRequestBtns) {
-	const modalClass = 'text-us';
-	sendRequestBtns.forEach((btn) => {
-		btn.addEventListener('click', () => {
-			initModal(modalClass);
-			initTextvalueCounter();
-			sendedModalHandler();
-		});
-	});
+   const modalClass = "text-us";
+   sendRequestBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+         initModal(modalClass);
+         initTextvalueCounter();
+         sendedModalHandler();
+      });
+   });
 }
 
 //добавление модалки с недоступными товарами (корзина)
-const unavailableBtns = document.querySelectorAll('#unavailable-btn');
+const unavailableBtns = document.querySelectorAll("#unavailable-btn");
 if (unavailableBtns) {
-	const modalClass = 'unavailable-modal';
-	unavailableBtns.forEach((btn) => {
-		btn.addEventListener('click', () => {
-			initModal(modalClass);
-		});
-	});
+   const modalClass = "unavailable-modal";
+   unavailableBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+         initModal(modalClass);
+      });
+   });
 }
 
 //модалка редактирования персональной информации
-const editProfileDataBtns = document.querySelectorAll('#red-prof');
+const editProfileDataBtns = document.querySelectorAll("#red-prof");
 if (editProfileDataBtns) {
-	const modalClass = 'personal-info-modal';
-	editProfileDataBtns.forEach((btn) => {
-		btn.addEventListener('click', () => {
-			initModal(modalClass);
-		});
-	});
+   const modalClass = "personal-info-modal";
+   editProfileDataBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+         initModal(modalClass);
+      });
+   });
 }
 //модалка сменить пароль
-const changePassBtns = document.querySelectorAll('#change-pass');
+const changePassBtns = document.querySelectorAll("#change-pass");
 if (changePassBtns) {
-	const modalClass = 'chage-password-modal';
-	changePassBtns.forEach((btn) => {
-		btn.addEventListener('click', () => {
-			initModal(modalClass);
-		});
-	});
+   const modalClass = "chage-password-modal";
+   changePassBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+         initModal(modalClass);
+      });
+   });
 }
 //модалка добавить адрес
-const addAdressBtns = document.querySelectorAll('#add-adress');
+const addAdressBtns = document.querySelectorAll("#add-adress");
 if (addAdressBtns) {
-	const modalClass = 'add-adress';
-	addAdressBtns.forEach((btn) => {
-		btn.addEventListener('click', () => {
-			initModal(modalClass);
-		});
-	});
+   const modalClass = "add-adress";
+   addAdressBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+         initModal(modalClass);
+      });
+   });
 }
 
 //модалка изменить адресс
-const editAdressBtns = document.querySelectorAll('#edit-adress');
+const editAdressBtns = document.querySelectorAll("#edit-adress");
 if (editAdressBtns) {
-	const modalClass = 'edit-adress';
-	editAdressBtns.forEach((btn) => {
-		btn.addEventListener('click', () => {
-			initModal(modalClass);
+   const modalClass = "edit-adress";
+   editAdressBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+         initModal(modalClass);
 
-			const wrapper = document.querySelector('.edit-adress');
-			const tagButtons = wrapper.querySelectorAll('.section-tags__item-btn');
-			const tagBlocks = wrapper.querySelectorAll('.delivery-main__accordion');
+         const wrapper = document.querySelector(".edit-adress");
+         const tagButtons = wrapper.querySelectorAll(".section-tags__item-btn");
+         const tagBlocks = wrapper.querySelectorAll(".delivery-main__accordion");
 
-			const tabsHandler = (btn) => {
-				btn.removeEventListener('click', tabsHandler);
-				tagButtons.forEach((el) => el.classList.remove('active'));
-				tagBlocks.forEach((el) => {
-					el.classList.remove('active');
-					el.classList.add('hide');
-				});
-				btn.classList.add('active');
-				const path = btn.dataset.path;
-				tagBlocks.forEach((block) => {
-					if (block.dataset.target === path) {
-						block.classList.add('active');
-						block.classList.remove('hide');
-					}
-				});
-			};
+         const tabsHandler = (btn) => {
+            btn.removeEventListener("click", tabsHandler);
+            tagButtons.forEach((el) => el.classList.remove("active"));
+            tagBlocks.forEach((el) => {
+               el.classList.remove("active");
+               el.classList.add("hide");
+            });
+            btn.classList.add("active");
+            const path = btn.dataset.path;
+            tagBlocks.forEach((block) => {
+               if (block.dataset.target === path) {
+                  block.classList.add("active");
+                  block.classList.remove("hide");
+               }
+            });
+         };
 
-			tagButtons.forEach((btn) => {
-				btn.addEventListener('click', () => tabsHandler(btn));
-			});
-		});
-	});
+         tagButtons.forEach((btn) => {
+            btn.addEventListener("click", () => tabsHandler(btn));
+         });
+      });
+   });
 }
 
 //модалка с отзывом на вакансию
-const vacanciesBtns = document.querySelectorAll('.vacancy-btn');
+const vacanciesBtns = document.querySelectorAll(".vacancy-btn");
 if (vacanciesBtns) {
-	const modalClass = 'vacancy-modal';
-	vacanciesBtns.forEach((btn) => {
-		btn.addEventListener('click', () => {
-			initModal(modalClass);
-		});
-	});
+   const modalClass = "vacancy-modal";
+   vacanciesBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+         initModal(modalClass);
+      });
+   });
 }
 
 //модалка с акцией, пока что не добавлена никуда, укажите кнопку по нужному id.
-const stocksBtns = document.querySelectorAll('#promotion-btn');
+const stocksBtns = document.querySelectorAll("#promotion-btn");
 if (stocksBtns) {
-	const modalClass = 'vacancy-modal';
-	stocksBtns.forEach((btn) => {
-		btn.addEventListener('click', () => {
-			initModal(modalClass);
-		});
-	});
+   const modalClass = "vacancy-modal";
+   stocksBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+         initModal(modalClass);
+      });
+   });
 }
 
 //модалка регистрации в личном кабинете при клике "Зарегистрироваться" в какой-то акции
-const partRegBtns = document.querySelectorAll('#partnership-btn');
+const partRegBtns = document.querySelectorAll("#partnership-btn");
 if (partRegBtns) {
-	const modalClass = 'partnership';
-	partRegBtns.forEach((btn) => {
-		btn.addEventListener('click', () => {
-			initModal(modalClass);
-		});
-	});
+   const modalClass = "partnership";
+   partRegBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+         initModal(modalClass);
+      });
+   });
+}
+
+// модалка калькулятора с данными
+
+const sendApplicationBtn = document.querySelector(".send-application");
+const sendCalculatorDataBtn = document.querySelector(".calclulcator-first-modal-btn");
+
+if (sendApplicationBtn) {
+   const firstModalClass = "calculator-first-modal";
+   const secondModalClass = "calculator-second-modal";
+
+   sendApplicationBtn.addEventListener("click", () => {
+      initModal(firstModalClass);
+
+      const sendCalculatorDataBtn = document.querySelector(".calclulcator-first-modal-btn");
+
+      sendCalculatorDataBtn.addEventListener("click", () => {
+         initModal(secondModalClass);
+      });
+   });
 }
