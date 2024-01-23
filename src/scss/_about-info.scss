@@ -1,6 +1,10 @@
 .about-info {
 	background-color: $biege;
 
+	&.calculator-banner + .catalog-main-block {
+		padding-top: 8rem;
+	}
+
 	.section-tags__container {
 		margin-bottom: 6rem;
 	}
