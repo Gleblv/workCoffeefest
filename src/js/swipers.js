@@ -117,42 +117,44 @@ document.addEventListener("DOMContentLoaded", function () {
       });
    }
 
-   const chronologySwiper = new Swiper(".chronology-swiper", {
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      allowTouchMove: true,
-      allowSlidePrev: true,
-      allowSlideNext: true,
-      breakpoints: {
-         769: {
-            slidesPerView: 5.8,
-            slidesPerGroup: 5.8,
-            allowTouchMove: false,
-            allowSlidePrev: false,
-            allowSlideNext: false,
+   if (document.querySelector(".chronology-swiper")) {
+      const chronologySwiper = new Swiper(".chronology-swiper", {
+         slidesPerView: 1,
+         slidesPerGroup: 1,
+         allowTouchMove: true,
+         allowSlidePrev: true,
+         allowSlideNext: true,
+         breakpoints: {
+            769: {
+               slidesPerView: 5.8,
+               slidesPerGroup: 5.8,
+               allowTouchMove: false,
+               allowSlidePrev: false,
+               allowSlideNext: false,
+            },
          },
-      },
-      pagination: {
-         el: ".chronology__swiper-pagination",
-         clickable: true,
-      },
-      on: {
-         slideChange: (swiper) => {
-            if (window.screen.width < 768) {
-               const slides = swiper.slides;
-
-               slides.forEach((slide, i) => {
-                  if (i === swiper.activeIndex) {
-                     slide.classList.add("active");
-                     return;
-                  }
-
-                  slide.classList.remove("active");
-               });
-            }
+         pagination: {
+            el: ".chronology__swiper-pagination",
+            clickable: true,
          },
-      },
-   });
+         on: {
+            slideChange: (swiper) => {
+               if (window.screen.width < 768) {
+                  const slides = swiper.slides;
+
+                  slides.forEach((slide, i) => {
+                     if (i === swiper.activeIndex) {
+                        slide.classList.add("active");
+                        return;
+                     }
+
+                     slide.classList.remove("active");
+                  });
+               }
+            },
+         },
+      });
+   }
 
    const awaySwiper = new Swiper(".away__swiper", {
       slidesPerView: 3,
@@ -469,6 +471,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
       pagination: {
          el: ".why-us__swiper-pagination",
+      },
+   });
+
+   const cakesSlider = new Swiper(".cakes-slider__swiper", {
+      slidesPerView: 2,
+      slidesPerColumn: 2,
+      slidesPerGroup: 2,
+      slidesPerColumnFill: "row",
+      spaceBetween: 7,
+
+      breakpoints: {
+         768: {
+            slidesPerView: 4,
+            slidesPerColumn: 2,
+            slidesPerGroup: 4,
+            spaceBetween: 32,
+         },
+      },
+
+      pagination: {
+         el: ".cakes-slider__swiper-pagination",
       },
    });
 });
