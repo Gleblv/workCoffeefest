@@ -37,6 +37,7 @@
 		background-color: $darkBlue;
 
 		.container {
+			position: relative;
 			display: flex;
 		}
 
@@ -89,8 +90,8 @@
 
 		&-social {
 			position: absolute;
-			right: 16rem;
-			bottom: 6rem;
+			right: 0rem;
+			bottom: calc(0% - 5rem);
 			display: flex;
 			align-items: center;
 
