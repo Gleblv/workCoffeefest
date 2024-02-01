@@ -71,7 +71,6 @@
 
 		&__swiper-slide {
 			flex-direction: column;
-			// height: auto;
 
 			&__left {
 				width: auto;
@@ -82,13 +81,13 @@
 
 				&-heading {
 					font-size: 5.2rem;
-					line-height: 120%; /* 6.24rem */
+					line-height: 120%;
 					margin-bottom: 4rem;
 				}
 
 				&-description {
 					font-size: 2.8rem;
-					line-height: 140%; /* 3.92rem */
+					line-height: 140%;
 					margin-bottom: 8rem;
 				}
 
@@ -98,7 +97,7 @@
 
 					span {
 						font-size: 3.2rem;
-						line-height: 120%; /* 3.84rem */
+						line-height: 120%;
 						letter-spacing: 0.096rem;
 						margin-right: 2rem;
 					}
@@ -106,7 +105,6 @@
 			}
 
 			&__right {
-				// height: 82rem;
 				border-radius: 0 0 7.2rem 7.2rem;
 				overflow: hidden;
 				width: auto;

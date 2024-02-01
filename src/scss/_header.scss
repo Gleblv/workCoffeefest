@@ -563,7 +563,7 @@
 
 		.burger-menu {
 			&__accordion {
-				max-height: calc(100vh - 67rem);
+				height: calc(100dvh - 40rem);
 				overflow-y: scroll;
 
 				.content {

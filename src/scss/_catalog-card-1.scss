@@ -21,7 +21,6 @@
 		width: 100%;
 		min-height: 37.5rem;
     	height: 37.5rem;
-		// border-bottom: 0.1rem solid #fff9ee;
 
 		img {
 			width: 100%;
@@ -45,10 +44,6 @@
 	}
 
 	&--big {
-		// .catalog-card-1__descr {
-		// 	height: 72rem;
-		// }
-
 		.catalog-card-1__info {
 			height: 39.5rem;
 			padding: 0;
@@ -238,10 +233,6 @@
 		}
 	}
 }
-
-// .catalog-card-1__img {
-// 	height: 37.4rem;
-// }
 
 @media (max-width: 48em) {
 	.catalog-main-block.cakes {

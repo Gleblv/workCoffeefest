@@ -540,7 +540,6 @@
 		&__img {
 			width: 67rem;
 			height: 72.4rem;
-			// margin: 0 0 4rem 0;
 			min-width: 0rem;
 			border-radius: 0;
 			margin-bottom: 0;
@@ -615,13 +614,13 @@
 			.card-det__stats-weight {
 				span {
 					font-size: 2.8rem;
-					line-height: 140%; /* 3.92rem */
+					line-height: 140%;
 				}
 
 				&.active {
 					span {
 						font-size: 5.2rem;
-						line-height: 120%; /* 6.24rem */
+						line-height: 120%;
 					}
 				}
 			}
@@ -680,7 +679,6 @@
 		&__img {
 			width: 67rem;
 			height: 72.4rem;
-			// margin: 0 0 4rem 0;
 		}
 
 		&__content-box {

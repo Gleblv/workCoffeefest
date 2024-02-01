@@ -534,7 +534,7 @@ $white20: rgba(255, 255, 255, 0.2);
 	input[type='date'] {
 		-webkit-appearance: none;
 		-moz-appearance: none;
-		appearance: none; /* Убрать стандартный стиль элемента */
+		appearance: none;
 		background-image: none;
 		padding-right: 0.5em;
 
@@ -1780,7 +1780,6 @@ $white20: rgba(255, 255, 255, 0.2);
 		&.active {
 			.acc-content {
 				transition: 0.7s ease-in-out;
-				// max-height: 200rem !important;
 				opacity: 1;
 			}
 

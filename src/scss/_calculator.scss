@@ -26,7 +26,7 @@
         color: $white;
         font-size: 6rem;
         font-weight: 700;
-        line-height: 100%; /* 6rem */
+        line-height: 100%;
         max-width: 59.2rem;
         margin-bottom: 4.5rem;
     }
@@ -34,7 +34,7 @@
     &__descr {
         color: $light;
         font-size: 1.8rem;
-        line-height: 140%; /* 2.52rem */
+        line-height: 140%;
         margin-bottom: 2rem;
         max-width: 66.1rem;
     }
@@ -78,7 +78,7 @@
             justify-content: space-between;
             align-items: center;
             font-size: 2rem;
-            line-height: 125%; /* 2.5rem */
+            line-height: 125%;
         }
 
         &-success {
@@ -133,6 +133,7 @@
 
                     &__descr {
                         width: auto;
+                        margin-right: auto;
                     }
 
                     &__name {
@@ -146,13 +147,13 @@
 
                     &__weight {
                         font-size: 1.8rem;
-                        line-height: 140%; /* 2.52rem */
+                        line-height: 140%;
                     }
 
                     &__price {
                         font-size: 2.2rem;
                         font-weight: 700;
-                        line-height: 130%; /* 2.86rem */
+                        line-height: 130%;
                         text-transform: uppercase;
                         align-self: center;
                     }
@@ -162,7 +163,7 @@
             &__decoration {
                 &-item {
                     font-size: 2rem;
-                    line-height: 125%; /* 2.5rem */
+                    line-height: 125%;
 
                     &:not(:last-child) {
                         margin-bottom: 1.6rem;
@@ -187,13 +188,13 @@
 
                     &__weight {
                         font-size: 2rem;
-                        line-height: 125%; /* 2.5rem */
+                        line-height: 125%;
                     }
 
                     &__price {
                         font-size: 2.2rem;
                         font-weight: 700;
-                        line-height: 130%; /* 2.86rem */
+                        line-height: 130%;
                         text-transform: uppercase;
                     }
                 }
@@ -211,7 +212,7 @@
             color: $brightHeadlines;
             font-size: 2.2rem;
             font-weight: 700;
-            line-height: 130%; /* 2.86rem */
+            line-height: 130%;
             text-transform: uppercase;
         }
 
@@ -219,7 +220,7 @@
             color: $brightHeadlines;
             font-size: 2.2rem;
             font-weight: 700;
-            line-height: 130%; /* 2.86rem */
+            line-height: 130%;
             text-transform: uppercase;
 
             span {
@@ -276,13 +277,13 @@
         &__title {
             font-size: 5.2rem;
             font-weight: 700;
-            line-height: 120%; /* 6.24rem */
+            line-height: 120%;
             margin-bottom: 8rem;
         }
 
         &__descr {
             font-size: 2.8rem;
-            line-height: 140%; /* 3.92rem */
+            line-height: 140%;
             margin-bottom: 4rem;
         }
 
@@ -294,7 +295,7 @@
         &__option {
             &-head {
                 font-size: 2.8rem;
-                line-height: 140%; /* 3.92rem */
+                line-height: 140%;
             }
 
             &-menu {
@@ -303,14 +304,14 @@
                         &__name {
                             margin-bottom: 0;
                             font-size: 2.8rem;
-                            line-height: 120%; /* 3.36rem */
+                            line-height: 120%;
                             letter-spacing: 0.084rem;
                         }
 
                         &__price {
                             font-size: 3.6rem;
                             font-weight: 700;
-                            line-height: 150%; /* 5.4rem */
+                            line-height: 150%;
                         }
                     }
                 }
@@ -318,7 +319,7 @@
                 &__decoration {
                     &-item {
                         font-size: 2.8rem;
-                        line-height: 140%; /* 3.92rem */
+                        line-height: 140%;
                     }
                 }
             }
@@ -328,18 +329,18 @@
             &-text {
                 font-size: 3.6rem;
                 font-weight: 700;
-                line-height: 150%; /* 5.4rem */
+                line-height: 150%;
             }
 
             &-number {
                 font-size: 3.6rem;
                 font-weight: 700;
-                line-height: 150%; /* 5.4rem */
+                line-height: 150%;
 
                 span {
                     font-size: 3.6rem;
                     font-weight: 700;
-                    line-height: 150%; /* 5.4rem */
+                    line-height: 150%;
                 }
             }
         }
