@@ -1,5 +1,7 @@
 .categories-section {
 	&.alternative {
+		padding-bottom: 0;
+
 		.categories-section__heading {
 			color: $red;
 		}

@@ -45,7 +45,8 @@
         }
 
         &-text {
-            font-size: 2rem;
+            font-size: 12px;
+            // font-size: 2rem;
             line-height: 125%; /* 2.5rem */
         }
 
@@ -55,7 +56,8 @@
             li {
                 position: relative;
                 padding-left: 2rem;
-                font-size: 2rem;
+                font-size: 12px;
+                // font-size: 2rem;
                 line-height: 125%; /* 2.5rem */
 
                 &::before {
