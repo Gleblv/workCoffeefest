@@ -113,8 +113,20 @@ document.addEventListener('DOMContentLoaded', function () {
     const accordionItems = document.querySelectorAll('.burger-menu__accordion .acc-item');
 
     accordionItems.forEach((item, i) => {
+      if (i === accordionItems.length - 1) {
+        item.addEventListener('click', () => {
+          setTimeout(() => {
+            accordionItems[i].scrollIntoView({ behavior: 'smooth', block: 'end' });
+          }, 700);
+        });
+
+        return;
+      }
+
       item.addEventListener('click', () => {
-        accordionItems[i + 1].scrollIntoView({ behavior: 'smooth', block: 'end' });
+        setTimeout(() => {
+          accordionItems[i + 1].scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }, 700);
       });
     });
   }
